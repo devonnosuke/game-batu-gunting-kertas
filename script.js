@@ -1,227 +1,224 @@
-
 // Tulis kode Javascript (JS) disini :
 
 // ================= [AWAL] Kode untuk Music ==================
 
-    // Siapkan tempat untuk menampung BGM (Background Music)
-    var bgmSound; 
-    
-    // Mengisi variabel bgm dengan file audio berdasarkan tag yang ber-id 'bgm'
-    bgmSound = document.getElementById('bgm');
-    
-    // Membuat fungsi untuk memutar bgm dan mengatur volumenya 60%
-    function playSound(){
-        bgmSound.play();
-        // bgmSound.volume = 0.6;
-    }
-    
-    // Membuat fungsi untuk stop memutar bgm 
-    // dan reset waktu putar ke 0 
-    function stopSound(){
-        bgmSound.pause();
-        // bgmSound.currentTime = 0;
-    }
+// Siapkan tempat untuk menampung BGM (Background Music)
+var clickSound;
 
-    // Siapkan tempat untuk menampung BGM (Background Music)
-    var clickSound; 
+// Mengisi variabel clickSound dengan file audio berdasarkan Element yang ber-id 'click'
+clickSound = document.getElementById("click");
 
-    // Mengisi variabel clickSound dengan file audio berdasarkan tag yang ber-id 'click'
-    clickSound = document.getElementById('click');
+// Membuat fungsi untuk memutar suara click
+function playClick() {
+  clickSound.play();
+}
 
-    // Membuat fungsi untuk memutar suara click
-    function playClick(){
-        clickSound.play();
-    }
+// Siapkan tempat untuk menampung BGM (Background Music)
+var bgmSound;
+
+// Mengisi variabel bgmSound dengan file audio berdasarkan Element yang ber-id 'bgm'
+bgmSound = document.getElementById("bgm");
+
+// Membuat fungsi untuk memutar bgm ++dan mengatur volumenya 60%
+function playSound() {
+  bgmSound.play();
+  // bgmSound.volume = 0.6;
+}
+
+// Membuat fungsi untuk stop memutar bgm
+// dan reset waktu putar ke 0
+function stopSound() {
+  bgmSound.pause();
+  // bgmSound.currentTime = 0;
+}
 
 // ================= [AKHIR] Kode untuk Music ==================
 
 // ================= [AWAL] Kode untuk Menampilkan Nama Pemain dan Computer ==================
 
-    // Siapkan tempat untuk menampung nama pemain
-    var namaPemain 
-    
-    // Membuat prompt untuk mendapatkan nama pemain
-    // lalu dimasukkan ke dalam variable namaPemain
-    namaPemain = prompt('Masukkan Nama Kamu:');
+// Siapkan tempat untuk menampung nama pemain
+var PlayerName = "Devon";
 
-    // Siapkan tempat untuk menampung [Lokasi dimana namaPemain akan ditampilkan ke game]
-    var tampilNamaPemain;
+// Siapkan tempat untuk menampung nama pemain
+var ComName = "Yura-Com";
 
-    // Memasukkan [Lokasi dimana namaPemain akan ditampilkan ke game]
-    // ke dalam variabel/tampunagan namaPemain
-    tampilNamaPemain = document.getElementById('tampilNama');
+// Membuat prompt untuk mendapatkan nama pemain
+// lalu dimasukkan ke dalam variable PlayerName
+// PlayerName = prompt('Insert Your Name:');
 
-    // Mengganti isinya dengan menampilkan nama pemain dan nama Computer
-    tampilNamaPemain.textContent = namaPemain +' VS Yura-Computer';
+// Siapkan tempat untuk menampung [Lokasi dimana PlayerName akan ditampilkan ke game]
+var showPlayerName;
 
-// ================= AKHIR Kode untuk Menampilkan Nama Pemain dan Computer ==================
+// Memasukkan [Lokasi dimana PlayerName akan ditampilkan ke game]
+// ke dalam variabel/tampunagan showPlayerName
+showPlayerName = document.getElementById("showName");
 
-// ================= Menampilkan Alert berisi "Selamat Bermain Game!" ==================  
-alert('Selamat Bermain Game!');
+// Mengganti isinya dengan menampilkan nama pemain dan nama Computer
+showPlayerName.textContent = PlayerName + " VS " + ComName;
 
+// ================= [AKHIR] Kode untuk Menampilkan Nama Pemain dan Computer ==================
 
-// ================= AWAL Menyiapkan variabel yang diperlukan =================
+// ================= [AWAL] Menyiapkan variabel yang diperlukan =================
 
-    // Siapkan tempat untuk menampung pilihan Pemain & Computer
-    var pilihanPemain;
-    var pilihanComputer;
-    
-    // Siapkan tempat untuk menampung score Pemain & Computer
-    // dan mengisinya dengan 0
-    var scoreComputer = 0;
-    var scorePemain = 0;
+// Siapkan tempat untuk menampung pilihan Pemain & Computer
+var playerChoice;
+var computerChoice;
 
-    // Siapkan tempat untuk menampung hasil sementara
-    var hasilSementara;
+// Siapkan tempat untuk menampung score Pemain & Computer
+// dan mengisinya dengan 0
+var computerScore = 0;
+var playerScore = 0;
 
-// ================= AKHIR Menyiapkan variabel yang diperlukan =================
+// Siapkan tempat untuk menampung hasil sementara
+var currentResult;
 
-// ================= AWAL Membuat fungsi ambilpilihan() untuk mengambil pilihan pemain =================
+// ================= [AKHIR] Menyiapkan variabel yang diperlukan =================
+
+// ================= [AWAL] Membuat fungsi takeChoice() untuk mengambil pilihan pemain =================
 // ====================================== Serta memulai permainan. =====================================
-function ambilPilihan(pilihanPemain) {
-    
-    // ==== [AWAL] kode agar komputer memilih secara random
+function takeChoice(playerChoice) {
+  // ==== [AWAL] kode agar komputer memilih secara random
 
-        // Siapkan tempat untuk menampung opsi untuk pilihan komputer
-        var opsi = ["🖐️","✌️","👊"];
-        
-        // Siapkan tempat untuk menampung pilihan acak dari komputer
-        // lalu menyimpanya ke variabel hasilAcak
-        var hasilAcak = Math.floor(Math.random() * opsi.length);
-    
-        // Siapkan tempat untuk menampung hasil dari pilihan komputer
-        var pilihanComputer;
-        
-        // penyimpan pilihan komputer ke dalam variabel pilihanComputer 
-        pilihanComputer = opsi[hasilAcak];
-    
-    // ==== [AKHIR] kode agar komputer memilih secara random
+  // Siapkan tempat untuk menampung opsi apa saja yang dapat dipilih komputer
+  var options = ["🖐️", "✌️", "👊"];
 
-    // ==== [AWAL] kode agar pilihan pemain & komputer ditampikan
+  // Siapkan tempat untuk menampung pilihan acak dari komputer
+  // lalu menyimpanya ke variabel randomGenerator
+  var randomGenerator = Math.floor(Math.random() * 3);
 
-        // Menandai tempat dimana pilihan pemain & pilihan komputer akan ditampilkan di dalam game
-        // lalu disimpan dalam variabel tampilPilihan
-        var tampilPilihan = document.getElementById('tampilPilihan');
+  // Siapkan tempat untuk menampung hasil dari pilihan komputer
+  var computerChoice;
 
-        // Menimpa isi tag text baru
-        tampilPilihan.textContent = pilihanPemain + ' VS ' + pilihanComputer;
+  // penyimpan pilihan komputer ke dalam variabel computerChoice
+  computerChoice = options[randomGenerator];
 
-    // ==== [AKHIR] kode agar pilihan pemain & komputer ditampikan
+  // ==== [AKHIR] kode agar komputer memilih secara random
 
-    // ==== [AWAL] Menghitung Score sementara pemain & komputer
+  // ==== [AWAL] kode agar pilihan pemain & komputer ditampikan
 
-        // AWAL Cek jika SERI
-        if (pilihanPemain === "🖐️" && pilihanComputer === "🖐️") {
-            hasilSementara = 'Seri 🤐';
-        }
-        if (pilihanPemain === "✌️" && pilihanComputer === "✌️") {
-            hasilSementara = 'Seri 🤐';
-        }
-        if (pilihanPemain === "👊" && pilihanComputer === "👊") {
-            hasilSementara = 'Seri 🤐';
-        }
-        // AKHIR Cek jika SERI
+  // Menandai tempat dimana pilihan pemain & pilihan komputer akan ditampilkan di dalam game
+  // lalu disimpan dalam variabel showChoosen
+  var showChoosen = document.getElementById("showChoosen");
 
-        // AWAL Cek jika MENANG
-        if (pilihanPemain === "🖐️" && pilihanComputer === "👊") {
-            scorePemain++;
-            hasilSementara = 'Menang 😂';
-        }
-        if (pilihanPemain === "✌️" && pilihanComputer === "🖐️") {
-            scorePemain++;
-            hasilSementara = 'Menang 😂';
-        }
-        if (pilihanPemain === "👊" && pilihanComputer === "✌️") {
-            scorePemain++;
-            hasilSementara = 'Menang 😂';
-        }
-        // AKHIR Cek jika MENANG
+  // Menimpa isi Element pada showChoosen dengan text baru
+  showChoosen.textContent = playerChoice + " VS " + computerChoice;
 
-        // AWAL Cek jika KALAH
-        if (pilihanPemain === "🖐️" && pilihanComputer === "✌️") {
-            scoreComputer++; 
-            hasilSementara = 'Kalah 😭';
-        }
-        if (pilihanPemain === "✌️" && pilihanComputer === "👊") {
-            scoreComputer++;
-            hasilSementara = 'Kalah 😭';
-        }
-        if (pilihanPemain === "👊" && pilihanComputer === "🖐️") {
-            scoreComputer++;
-            hasilSementara = 'Kalah 😭';
-        }
-        // AKHIR Cek jika KALAH
-        
-    // ==== [AKHIR] Menghitung Score sementara pemain & komputer
-    
-    // ===== [AWAL] Menampilkan Score sementara pemain & komputer =====  
-        
-        // Menandai tempat dimana score permainan akan ditampilkan
-        // lalu disimpan dalam variabel tampilScore
-        var tampilScoreSementara = document.getElementById('score');
+  // ==== [AKHIR] kode agar pilihan pemain & komputer ditampikan
 
-        // Menimpa isi tag dengan text baru
-        tampilScoreSementara.textContent = 'Score ' + scorePemain + ':' + scoreComputer;
-    
-    // ===== [AKHIR] Menampilkan Score sementara pemain & komputer =====  
-    
-    // ===== [AWAL] Menampilkan Hasil sementara =====      
-        
-        // Menandai tempat dimana hasil permainan akan ditampilkan
-        // lalu disimpan dalam variabel tampilhasil
-        var tampilHasilSementara = document.getElementById('hasilPermainan');
+  // ==== [AWAL] Menghitung Score sementara pemain & komputer
 
-        // Mengganti isinya dengan dengan text baru
-        tampilHasilSementara.textContent = 'Hasil: ' + hasilSementara;
+  // AWAL Cek jika seri
+  if (playerChoice === "🖐️" && computerChoice === "🖐️") {
+    currentResult = "Draw 🤐";
+  }
+  if (playerChoice === "✌️" && computerChoice === "✌️") {
+    currentResult = "Draw 🤐";
+  }
+  if (playerChoice === "👊" && computerChoice === "👊") {
+    currentResult = "Draw 🤐";
+  }
+  // AKHIR Cek jika seri
 
-    // ===== [AKHIR] Menampilkan Hasil sementara =====  
-    
-    
-    // ===== [AWAL] Menampilkan Hasil akhir permainan =====
-        
-        
-        var gameOver = document.getElementById('gameOver');
-        var tampilHasilAkhir = document.getElementById('pemenang');
-        var foto;
-        var hasil;
-        
-        if (scorePemain === 5 || scoreComputer === 5) {
-            
-            gameOver.style.display = 'flex';
-            
-            if (scorePemain > scoreComputer) {
-                foto = 'foto/dance.gif';
-                hasil = 'Kamu Menang 😂';
-            } else {
-                foto = 'foto/crying.gif';
-                hasil = 'Kamu Kalah 😭';
-            }
-            
-            tampilHasilAkhir.textContent = hasil;
-            document.getElementById('foto').src = foto;
-            document.getElementById('scoreAkhir').textContent = 'Score Akhir ' + scorePemain + ':' + scoreComputer;
-        }
-    // ===== [AKHIR] Menampilkan Hasil akhir permainan =====  
-    
-}
-// ================= AKHIR Membuat fungsi ambilpilihan() untuk mengambil pilihan pemain =================
+  // AWAL Cek jika menang
+  if (playerChoice === "🖐️" && computerChoice === "👊") {
+    playerScore++;
+    currentResult = "Win 😂";
+  }
+  if (playerChoice === "✌️" && computerChoice === "🖐️") {
+    playerScore++;
+    currentResult = "Win 😂";
+  }
+  if (playerChoice === "👊" && computerChoice === "✌️") {
+    playerScore++;
+    currentResult = "Win 😂";
+  }
+  // AKHIR Cek jika menang
 
-// ================= AWAL Membuat fungsi ulangi() untuk memulai permainan =================
-    function ulangi(){
-        // reset score Computer ke 0
-        scoreComputer = 0;
-        // reset score pemain ke 0
-        scorePemain = 0;
+  // AWAL Cek jika kalah
+  if (playerChoice === "🖐️" && computerChoice === "✌️") {
+    computerScore++;
+    currentResult = "Lose 😭";
+  }
+  if (playerChoice === "✌️" && computerChoice === "👊") {
+    computerScore++;
+    currentResult = "Lose 😭";
+  }
+  if (playerChoice === "👊" && computerChoice === "🖐️") {
+    computerScore++;
+    currentResult = "Lose 😭";
+  }
+  // AKHIR Cek jika kalah
 
-        // menyembunyikan tampilan game over
-        gameOver.style.display = 'none';
-        // reset nama pemain
-        tampilPilihan.textContent = '.. VS ..';
-        
-        // reset tampilan score
-        document.getElementById('score').textContent = `Score 0:0`;
-        // reset tampilan hasil permainan
-        document.getElementById('hasilPermainan').textContent = '';
+  // ==== [AKHIR] Menghitung Score sementara pemain & komputer
+
+  // ===== [AWAL] Menampilkan Score sementara pemain & komputer =====
+
+  // Menandai tempat dimana score permainan akan ditampilkan
+  // lalu disimpan dalam variabel showCurrentScore
+  var showCurrentScore = document.getElementById("score");
+
+  // Menimpa isi Element dengan text baru
+  showCurrentScore.textContent = "Score " + playerScore + ":" + computerScore;
+
+  // ===== [AKHIR] Menampilkan Score sementara pemain & komputer =====
+
+  // ===== [AWAL] Menampilkan Hasil sementara =====
+
+  // Menandai tempat dimana hasil permainan akan ditampilkan
+  // lalu disimpan dalam variabel showCurrentResult
+  var showCurrentResult = document.getElementById("showGameResult");
+
+  // Mengganti isinya dengan dengan text baru
+  showCurrentResult.textContent = "Result: " + currentResult;
+
+  // ===== [AKHIR] Menampilkan Hasil sementara =====
+
+  // ===== [AWAL] Menampilkan Hasil akhir permainan =====
+
+  var gameOver = document.getElementById("gameOver");
+  var showFinalResult = document.getElementById("showFinalResult");
+  var image;
+  var finalResult;
+
+  if (playerScore === 5 || computerScore === 5) {
+    gameOver.style.display = "flex";
+
+    if (playerScore > computerScore) {
+      // image = "image/dance.gif";
+      finalResult = "You Win!😂";
+    } else {
+      // image = "image/crying.gif";
+      finalResult = "You Loser!😭";
     }
-// ================= AKHIR Membuat fungsi ulangi() untuk memulai permainan =================
 
+    showFinalResult.textContent = finalResult;
+
+    // Mencari Element html dengan id image, lalu mengganti src dengan isi variabel image
+    // document.getElementById("image").src = image;
+
+    // Mencari Element html dengan id finalScore, lalu mengganti isi teks-nya.
+    document.getElementById("finalScore").textContent =
+      "Final Score " + playerScore + ":" + computerScore;
+  }
+  // ===== [AKHIR] Menampilkan Hasil akhir permainan =====
+}
+// ================= AKHIR Membuat fungsi takeChoice()() untuk mengambil pilihan pemain =================
+
+// ================= AWAL Membuat fungsi tryAgain() untuk mengulang permainan =================
+function tryAgain() {
+  // reset variabel score Computer ke 0
+  computerScore = 0;
+  // reset variabel score pemain ke 0
+  playerScore = 0;
+
+  // menyembunyikan tampilan game over
+  gameOver.style.display = "none";
+  // reset opsi Pemain dan Computer
+  showChoosen.textContent = ".. VS ..";
+
+  // reset tampilan score
+  document.getElementById("score").textContent = `Score 0:0`;
+  // reset tampilan hasil permainan
+  document.getElementById("showGameResult").textContent = "Result: -";
+}
+// ================= AKHIR Membuat fungsi tryAgain() untuk memulai permainan =================

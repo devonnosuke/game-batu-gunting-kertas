@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game 👊✌️🤚</title>
+    <link rel="stylesheet" href="styling.css" />
+  </head>
+  <body>
+    <div class="game">
+      <div class="audio">
+        <button class="play" onclick="playClick();playSound()">
+          Play Music
+        </button>
+        <button class="pause" onclick="playClick();stopSound()">
+          Pause Music
+        </button>
+        <audio src="sound/click.wav" type="audio/wav" id="click"></audio>
+        <audio src="sound/bgm.mp3" type="audio/mpeg" id="bgm"></audio>
+      </div>
+
+      <div class="content">
+        <h2 id="score">Score 0:0</h2>
+        🤐😂😭
+        <h1>Rock Paper Scissors Game</h1>
+        <h2>Let's Play!</h2>
+        <br />
+        <h3 id="showName">Player VS Yura-COM</h3>
+        <h1 id="showChoosen">..VS..</h1>
+        <h2 id="showGameResult">Result: -</h2>
+      </div>
+
+      <div class="player-option">
+        <!-- memanggil fungsi takeChoice() & playClick() pada saat  tombol diklik -->
+        <div class="option rock" onclick="playClick(); takeChoice('👊');">
+          <!-- <span>Rock</span>-->
+          👊
+        </div>
+        <div class="option paper" onclick="playClick(); takeChoice('🖐️');">
+          <!-- <span>Paper</span>-->
+          🖐️
+        </div>
+        <div class="option scissors" onclick="playClick(); takeChoice('✌️');">
+          <!-- <span>Scissors</span> -->
+          ✌️
+        </div>
+      </div>
+    </div>
+    <div class="game-over" id="gameOver">
+      <h1>Game Over!</h1>
+      <h1 id="showFinalResult"></h1>
+      <h2 id="finalScore"></h2>
+      <!-- <img id="image" src="" /> -->
+      <button class="try-again" onclick="tryAgain()">Try Again</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
