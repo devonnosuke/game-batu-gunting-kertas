@@ -22,7 +22,7 @@ bgmSound = document.getElementById("bgm");
 // Membuat fungsi untuk memutar bgm ++dan mengatur volumenya 60%
 function playSound() {
   bgmSound.play();
-  // bgmSound.volume = 0.6;
+  bgmSound.volume = 0.6;
 }
 
 // Membuat fungsi untuk stop memutar bgm
@@ -109,43 +109,43 @@ function takeChoice(playerChoice) {
 
   // AWAL Cek jika seri
   if (playerChoice === "🖐️" && computerChoice === "🖐️") {
-    currentResult = "Draw 🤐";
+    currentResult = "Seri 🤐";
   }
   if (playerChoice === "✌️" && computerChoice === "✌️") {
-    currentResult = "Draw 🤐";
+    currentResult = "Seri 🤐";
   }
   if (playerChoice === "👊" && computerChoice === "👊") {
-    currentResult = "Draw 🤐";
+    currentResult = "Seri 🤐";
   }
   // AKHIR Cek jika seri
 
   // AWAL Cek jika menang
   if (playerChoice === "🖐️" && computerChoice === "👊") {
     playerScore++;
-    currentResult = "Win 😂";
+    currentResult = "Menang 😂";
   }
   if (playerChoice === "✌️" && computerChoice === "🖐️") {
     playerScore++;
-    currentResult = "Win 😂";
+    currentResult = "Menang 😂";
   }
   if (playerChoice === "👊" && computerChoice === "✌️") {
     playerScore++;
-    currentResult = "Win 😂";
+    currentResult = "Menang 😂";
   }
   // AKHIR Cek jika menang
 
   // AWAL Cek jika kalah
   if (playerChoice === "🖐️" && computerChoice === "✌️") {
     computerScore++;
-    currentResult = "Lose 😭";
+    currentResult = "Kalah 😭";
   }
   if (playerChoice === "✌️" && computerChoice === "👊") {
     computerScore++;
-    currentResult = "Lose 😭";
+    currentResult = "Kalah 😭";
   }
   if (playerChoice === "👊" && computerChoice === "🖐️") {
     computerScore++;
-    currentResult = "Lose 😭";
+    currentResult = "Kalah 😭";
   }
   // AKHIR Cek jika kalah
 
@@ -184,17 +184,17 @@ function takeChoice(playerChoice) {
     gameOver.style.display = "flex";
 
     if (playerScore > computerScore) {
-      // image = "image/dance.gif";
-      finalResult = "You Win!😂";
+      image = "image/dance.gif";
+      finalResult = "Kau Pemenang!😂";
     } else {
-      // image = "image/crying.gif";
-      finalResult = "You Loser!😭";
+      image = "image/crying.gif";
+      finalResult = "Kau Pecundang!😭";
     }
 
     showFinalResult.textContent = finalResult;
 
     // Mencari Element html dengan id image, lalu mengganti src dengan isi variabel image
-    // document.getElementById("image").src = image;
+    document.getElementById("image").src = image;
 
     // Mencari Element html dengan id finalScore, lalu mengganti isi teks-nya.
     document.getElementById("finalScore").textContent =
