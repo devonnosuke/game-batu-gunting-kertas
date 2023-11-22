@@ -1,25 +1,25 @@
 // Tulis kode Javascript (JS) disini :
 
-// ================= [AWAL] Kode untuk Music ==================
+// ===== [AWAL] Kode untuk Music =====
 
-// Siapkan tempat untuk menampung BGM (Background Music)
-var clickSound;
+// Siapkan wadah untuk menampung BGM (Background Music)
+let clickSound;
 
 // Mengisi variabel clickSound dengan file audio berdasarkan Element yang ber-id 'click'
 clickSound = document.getElementById("click");
 
-// Membuat fungsi untuk memutar suara click
+// Membuat fungsi untuk memutar suara Klik
 function playClick() {
-  clickSound.play();
+  t;
 }
 
-// Siapkan tempat untuk menampung BGM (Background Music)
-var bgmSound;
+// Siapkan wadah untuk menampung BGM (Background Music)
+let bgmSound;
 
 // Mengisi variabel bgmSound dengan file audio berdasarkan Element yang ber-id 'bgm'
 bgmSound = document.getElementById("bgm");
 
-// Membuat fungsi untuk memutar bgm ++dan mengatur volumenya 60%
+// Membuat fungsi untuk memutar bgm dan mengatur volumenya 60%
 function playSound() {
   bgmSound.play();
   bgmSound.volume = 0.6;
@@ -32,62 +32,57 @@ function stopSound() {
   // bgmSound.currentTime = 0;
 }
 
-// ================= [AKHIR] Kode untuk Music ==================
+// ===== [AKHIR] Kode untuk Music =====
 
-// ================= [AWAL] Kode untuk Menampilkan Nama Pemain dan Computer ==================
+// ===== [AWAL] Kode untuk Menampilkan Nama Pemain dan Computer =====
 
-// Siapkan tempat untuk menampung nama pemain
-var PlayerName = "Devon";
+// Siapkan wadah untuk menampung nama pemain
+let PlayerName = "Devon";
 
-// Siapkan tempat untuk menampung nama pemain
-var ComName = "Yura-Com";
+// Siapkan wadah untuk menampung nama pemain
+let ComName = "Yura-Com";
 
-// Membuat prompt untuk mendapatkan nama pemain
-// lalu dimasukkan ke dalam variable PlayerName
-// PlayerName = prompt('Insert Your Name:');
+// Siapkan wadah untuk menampung [Lokasi dimana PlayerName akan ditampilkan ke game]
+let showPlayerName;
 
-// Siapkan tempat untuk menampung [Lokasi dimana PlayerName akan ditampilkan ke game]
-var showPlayerName;
-
-// Memasukkan [Lokasi dimana PlayerName akan ditampilkan ke game]
-// ke dalam variabel/tampunagan showPlayerName
+// Mencari Lokasi yang akan menampilkan nama pemain ke game
+// lalu dimasukkan ke dalam variabel showPlayerName
 showPlayerName = document.getElementById("showName");
 
 // Mengganti isinya dengan menampilkan nama pemain dan nama Computer
 showPlayerName.textContent = PlayerName + " VS " + ComName;
 
-// ================= [AKHIR] Kode untuk Menampilkan Nama Pemain dan Computer ==================
+// ===== [AKHIR] Kode untuk Menampilkan Nama Pemain dan Computer =====
 
-// ================= [AWAL] Menyiapkan variabel yang diperlukan =================
+// ===== [AWAL] Menyiapkan variabel yang diperlukan =====
 
-// Siapkan tempat untuk menampung pilihan Pemain & Computer
-var playerChoice;
-var computerChoice;
+// Siapkan wadah untuk menampung pilihan Pemain & Computer
+let playerChoice;
+let computerChoice;
 
-// Siapkan tempat untuk menampung score Pemain & Computer
+// Siapkan wadah untuk menampung score Pemain & Computer
 // dan mengisinya dengan 0
-var computerScore = 0;
-var playerScore = 0;
+let computerScore = 0;
+let playerScore = 0;
 
-// Siapkan tempat untuk menampung hasil sementara
-var currentResult;
+// Siapkan wadah untuk menampung hasil sementara
+let currentResult;
 
-// ================= [AKHIR] Menyiapkan variabel yang diperlukan =================
+// ===== [AKHIR] Menyiapkan variabel yang diperlukan =====
 
-// ================= [AWAL] Membuat fungsi takeChoice() untuk mengambil pilihan pemain =================
-// ====================================== Serta memulai permainan. =====================================
+// ===== [AWAL] Membuat fungsi takeChoice() untuk mengambil pilihan pemain =====
 function takeChoice(playerChoice) {
   // ==== [AWAL] kode agar komputer memilih secara random
 
-  // Siapkan tempat untuk menampung opsi apa saja yang dapat dipilih komputer
-  var options = ["🖐️", "✌️", "👊"];
+  // Siapkan wadah untuk menampung opsi apa saja yang dapat dipilih komputer
+  let options = ["🖐️", "✌️", "👊"];
 
-  // Siapkan tempat untuk menampung pilihan acak dari komputer
+  // Siapkan wadah dengan untuk menampung angka acak dari komputer
   // lalu menyimpanya ke variabel randomGenerator
-  var randomGenerator = Math.floor(Math.random() * 3);
+  let randomGenerator = Math.floor(Math.random() * 3);
 
-  // Siapkan tempat untuk menampung hasil dari pilihan komputer
-  var computerChoice;
+  // Siapkan wadah untuk menampung hasil dari pilihan komputer
+  let computerChoice;
 
   // penyimpan pilihan komputer ke dalam variabel computerChoice
   computerChoice = options[randomGenerator];
@@ -96,9 +91,9 @@ function takeChoice(playerChoice) {
 
   // ==== [AWAL] kode agar pilihan pemain & komputer ditampikan
 
-  // Menandai tempat dimana pilihan pemain & pilihan komputer akan ditampilkan di dalam game
-  // lalu disimpan dalam variabel showChoosen
-  var showChoosen = document.getElementById("showChoosen");
+  // Mencari Lokasi yang akan menampilkan pilihan pemain & pilihan komputer ke game
+  // lalu disimpan ke dalam variabel showChoosen
+  let showChoosen = document.getElementById("showChoosen");
 
   // Menimpa isi Element pada showChoosen dengan text baru
   showChoosen.textContent = playerChoice + " VS " + computerChoice;
@@ -153,9 +148,9 @@ function takeChoice(playerChoice) {
 
   // ===== [AWAL] Menampilkan Score sementara pemain & komputer =====
 
-  // Menandai tempat dimana score permainan akan ditampilkan
+  // Mencari Lokasi yang akan menampilkan score permainan ke game
   // lalu disimpan dalam variabel showCurrentScore
-  var showCurrentScore = document.getElementById("score");
+  let showCurrentScore = document.getElementById("score");
 
   // Menimpa isi Element dengan text baru
   showCurrentScore.textContent = "Score " + playerScore + ":" + computerScore;
@@ -164,21 +159,21 @@ function takeChoice(playerChoice) {
 
   // ===== [AWAL] Menampilkan Hasil sementara =====
 
-  // Menandai tempat dimana hasil permainan akan ditampilkan
+  // Menandai wadah dimana hasil permainan akan ditampilkan
   // lalu disimpan dalam variabel showCurrentResult
-  var showCurrentResult = document.getElementById("showGameResult");
+  let showCurrentResult = document.getElementById("showGameResult");
 
   // Mengganti isinya dengan dengan text baru
-  showCurrentResult.textContent = "Result: " + currentResult;
+  showCurrentResult.textContent = "Hasil: " + currentResult;
 
   // ===== [AKHIR] Menampilkan Hasil sementara =====
 
   // ===== [AWAL] Menampilkan Hasil akhir permainan =====
 
-  var gameOver = document.getElementById("gameOver");
-  var showFinalResult = document.getElementById("showFinalResult");
-  var image;
-  var finalResult;
+  let gameOver = document.getElementById("gameOver");
+  let showFinalResult = document.getElementById("showFinalResult");
+  let image;
+  let finalResult;
 
   if (playerScore === 5 || computerScore === 5) {
     gameOver.style.display = "flex";
@@ -202,9 +197,9 @@ function takeChoice(playerChoice) {
   }
   // ===== [AKHIR] Menampilkan Hasil akhir permainan =====
 }
-// ================= AKHIR Membuat fungsi takeChoice()() untuk mengambil pilihan pemain =================
+// ===== AKHIR Membuat fungsi takeChoice()() untuk mengambil pilihan pemain =====
 
-// ================= AWAL Membuat fungsi tryAgain() untuk mengulang permainan =================
+// ===== AWAL Membuat fungsi tryAgain() untuk mengulang permainan =====
 function tryAgain() {
   // reset variabel score Computer ke 0
   computerScore = 0;
@@ -217,8 +212,8 @@ function tryAgain() {
   showChoosen.textContent = ".. VS ..";
 
   // reset tampilan score
-  document.getElementById("score").textContent = `Score 0:0`;
+  document.getElementById("score").textContent = "Score 0:0";
   // reset tampilan hasil permainan
-  document.getElementById("showGameResult").textContent = "Result: -";
+  document.getElementById("showGameResult").textContent = "Hasil: -";
 }
-// ================= AKHIR Membuat fungsi tryAgain() untuk memulai permainan =================
+// ===== AKHIR Membuat fungsi tryAgain() untuk memulai permainan =====

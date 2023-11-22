@@ -3,18 +3,14 @@
   user-select: none;
 }
 
-.game {
-  height: 100vh;
-}
-
 button {
-  padding: 10px 5px;
+  padding: 10px 15px;
   margin: 15px;
   color: white;
   font-weight: bold;
+  font-size: 14px;
   transition: 0.1s;
   border: none;
-  width: 70px;
 }
 
 .pause {
@@ -33,7 +29,7 @@ button {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 10px auto;
+  margin: 20px auto;
   border: 3px solid #17c9a6;
   width: 400px;
   height: 370px;
@@ -114,7 +110,7 @@ h2 {
 
 .try-again {
   background-color: brown;
-  width: 80px;
+  width: 100px;
   margin: 15px auto;
 }
 
