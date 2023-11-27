@@ -10,7 +10,7 @@ clickSound = document.getElementById("click");
 
 // Membuat fungsi untuk memutar suara Klik
 function playClick() {
-  t;
+  clickSound.play();
 }
 
 // Siapkan wadah untuk menampung BGM (Background Music)
